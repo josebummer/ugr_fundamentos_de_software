@@ -1,0 +1,13 @@
+#!/bin/bash
+ 
+while :
+do
+   read -p "Introduce 2 numeros (-1 sale) : " a b
+   if [ $a -eq -1 ]
+   then
+      break
+   fi
+
+   n=$(( a + b ))
+   echo $n
+done

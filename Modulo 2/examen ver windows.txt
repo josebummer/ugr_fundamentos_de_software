@@ -1,0 +1,121 @@
+﻿1.a:
+
+#!/bin/bash
+
+sleep 5
+
+numero=
+
+while read -p "Introduce un numero aleatorio entre 0 y 10 (# para salir.): " numero
+
+do
+	
+aleatorio=$[$RANDOM%10+1]
+
+	if [ $numero -eq $aleatorio ] 2> /dev/null; then
+
+		echo -e "\nHas acertado! felicidades!.\n"
+		
+		exit
+	
+	elif [ $numero = "#" ]
+	then
+		
+		exit
+	
+	fi
+
+done
+
+
+
+
+1.b --> 3333
+
+
+
+
+1.c --> ps -e -o uid,pid,c,stime,tty,time,cmd | grep -w gedit
+
+
+
+1.d --> Entramos en top usando top. Una vez dentro podemos usar u para poner nuestro usuario y reducir los
+
+	procesos y ahora pulsamos L y escribimos gedit.
+	
+	
+	Tambien podemos sabiendo el PID del proceso, que en mi caso es 2851 y poner: top -p 2851.
+
+
+2.a --> g++ -c ArrayDebug.cpp
+
+
+
+2.b:
+
+#-----------------------------------------------------------------------------------------------
+# Prácticas de Fundamentos del software. Prueba Modulo II
+# makefile completo
+# Compila con g++ todos los fuentes y los enlaza, generando el archivo ejecutable '$(NOM_EJEC)'
+#-----------------------------------------------------------------------------------------------
+
+
+## definiciones configurables
+SOURCE  =Array.cpp ArrayDebug.cpp	# nombre de los ficheros fuente
+CC      =g++ 				# nombre del compilador
+NOM_EJEC=vector 			# nombre del ejecutable
+
+
+## flags para el compilador y el enlazador
+DEBUG_FLAG = 
+CPP_FLAG   = -Wall
+LD_FLAG    = 
+
+ALL_FLAGS      := $(CPP_FLAG) $(DEBUG_FLAG) $(LD_FLAG)
+
+## objetivos:
+
+initial-msgs: 
+	@echo "Prácticas de Fundamentos del software. Prueba Modulo II"
+	@make -s $(NOM_EJEC)
+
+$(NOM_EJEC): Array.o ArrayDebug.o Array.h
+	$(CC) -o $@ $?
+
+Array.o: Array.cpp
+	$(CC) -c $?
+
+ArrayDebug.o: ArrayDebug.cpp
+	$(CC) -c $?
+
+clean:
+	rm *.o $(NOM_EJEC)
+
+
+
+
+3.a --> g++ -o vector -g ArrayDebug.cpp Array.cpp 
+	
+Con esto creamos el ejecutable para que se pueda depurar.
+	
+gdb -x depuraArray.gdb vector
+	
+Y con esto cargamos las secuencias del fichero en el ejecutable
+
+
+
+3.b:
+
+break 41
+
+break 26
+
+break 61
+
+run
+
+print one
+
+continue
+
+print three

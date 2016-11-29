@@ -1,0 +1,10 @@
+#!/bin/bash
+tec=
+read -p "Introduce una letra del teclado de la parte central: " tec
+case $tec in
+	[1234567890]) echo "Has introducido una tecla de la primera fila.";;
+	[QWERTYUIOPqwertyuiop]) echo "Has introducido una letra de la segunda fila.";;
+	[ASDFGHJKLÑasdfghjklñ]) echo "Has introducido una letra de la fila tres.";;
+	[ZXCVBNMzxcvbnm]) echo "Has introducido una letra de la cuarta fila.";;
+	*) echo "Has introducido un caracter especial.";;
+esac

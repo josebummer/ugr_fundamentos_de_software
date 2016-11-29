@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ $# -eq 2 ]; then
+	if [ -d $1 ]; then
+		if [ `expr $2 + 1 2>/dev/null` ] ; then
+			find $1 -size -$2 > archivosSizN.txt
+		else
+			echo "El numero introducido no es correcto"
+		fi
+	else
+		echo "No has introducido un directorio como primer parametro"
+	fi
+else
+	echo "Orden: ./6.1 <directorio> <numero_entero>"
+fi

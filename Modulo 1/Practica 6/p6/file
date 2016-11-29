@@ -1,0 +1,24 @@
+#!/bin/bash
+
+usage()
+{
+   echo "Uso: $0 <filename>"
+   exit 1
+}
+ 
+# $f almacena el argumento
+file_exits()
+{
+   local f="$1"
+   [[ -f "$f" ]] && return 0 || return 1
+}
+
+# si n_arg=0 indicar el uso
+[[ $# -eq 0 ]] && usage
+ 
+
+if ( file_exits "$1" ) then
+    echo "El fichero existe"
+else
+    echo "El fichero no existe"
+fi

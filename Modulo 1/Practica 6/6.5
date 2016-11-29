@@ -1,0 +1,10 @@
+#!/bin/bash
+num=
+while :
+do
+	read -p "Introduce un numero entre 1 y 10 para salir: " num
+	if [ $num -ge 1 ] && [ $num -le 10 ]; then
+		echo "Has introducido un numero de salida."
+		break
+	fi
+done

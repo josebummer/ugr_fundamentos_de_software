@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Uso: case <caracter>. Pulse una tecla (= para terminar)"
+
+read letra
+
+case $letra in
+  [0-9]) echo "numero" ;;
+  [a-z]) echo "minisculas";;
+  [A-Z]) echo "mayusculas";;
+  *) echo "caracter especial" ;;
+esac
+

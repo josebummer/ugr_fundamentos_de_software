@@ -1,0 +1,9 @@
+#!/bin/bash
+Suma()
+{
+	let a=$1
+	let b=$2
+	n=$(($a+$b))
+	echo "Suma=$n"
+}
+Suma 5 10

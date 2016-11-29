@@ -1,0 +1,29 @@
+#!/bin/bash
+_uso() {
+	echo "Uso: $0 <directorio/fichero> <directorio/fichero>..."
+}
+_esdir() {
+	local d=$1
+	[ -d $d ] && return 0 || return 1
+}
+_esfich() {
+	local f=$1 
+	[ -f $f ] && return 0 || return 1
+}
+if [ $# -gt 0 ]; then
+	for x in $* ; do
+		if ! ( _esdir $x ) && ! ( _esfich $x ); then
+			echo "No existen todos los ficheros o directorios que has indicado."
+			exit
+		fi
+	done
+	dir=~/CopiasSeguridad
+	nombre=copia`date +%y%m%d`.tgz
+	if ! ( _esdir $dir ); then
+		mkdir $dir
+	fi
+	tar cvzf $dir/$nombre $* >/dev/null
+	echo "Su copia '$nombre' se ha realizado correctamente en $dir" 
+else
+	_uso
+fi

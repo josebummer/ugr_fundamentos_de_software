@@ -1,0 +1,34 @@
+#!/bin/bash
+
+echo "Pulse una tecla (= para terminar)"
+
+function char()
+{
+   case $1 in
+     [0-9]) echo "numero" ;;
+     [a-z]) echo "minisculas";;
+     [A-Z]) echo "mayusculas";;
+     *) echo "caracter especial" ;;
+   esac
+}
+
+
+while read letra; 
+do
+   char $letra
+   if [ $letra == "=" ]; 
+   then
+       exit
+   fi
+done
+
+
+function check()
+{
+   case $1 in
+     [0-9]) echo "numero" ;;
+     [a-z]) echo "minisculas";;
+     [A-Z]) echo "mayusculas";;
+     *) echo "caracter especial" ;;
+   esac
+}

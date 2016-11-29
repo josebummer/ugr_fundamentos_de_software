@@ -1,0 +1,10 @@
+#!/bin/bash
+while : ; do
+	read -p "Introduce el primer numero, si metes 0 sales: " a
+	read -p "Introduce el segundo numero: " b
+	if [ $a -eq 0 ]; then
+		break
+	fi
+	n=$(( $a+$b ))
+	echo "Suma=$n"
+done

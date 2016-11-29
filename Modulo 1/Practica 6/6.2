@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ $# -eq 1 ]; then
+	if [ -d $1 ]; then
+		echo -e "Directorio:\n"
+		find $1 -type d
+		#ls -d $1
+		echo -e "\n\nEnlace:\n"
+		find $1 -type l
+		echo -e "\n\nArchivo regular:\n"
+		find $1 -type f
+	else
+		echo "El directorio introducido no es correcto."
+	fi
+else
+	echo "Uso: ./6.2 <directorio>"
+fi

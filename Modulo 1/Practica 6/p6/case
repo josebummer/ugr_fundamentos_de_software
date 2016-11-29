@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# != 1 ] ; then
+   echo "Uso: case <caracter>"
+   exit;
+fi
+
+case $1 in
+  [0-9]) echo "numero" ;;
+  [a-z]) echo "minisculas";;
+  [A-Z]) echo "mayusculas";;
+  *) echo "caracter especial" ;;
+esac
+

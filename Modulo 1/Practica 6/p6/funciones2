@@ -1,0 +1,22 @@
+#!/bin/bash
+# llamadas a funciones
+x=45
+y=5
+ 
+suma()
+{
+  #puedo usar variables localesa a la funcion
+  local x=$1
+  local y=$2
+  echo $(( $x + $y ))
+}
+ 
+echo "x: $x and y: $y"
+# call function 
+ 
+echo "Llamada a funcion suma() con x=$x, y=$y"
+suma 5 10
+ 
+# el valor de las variables no son modificadas
+echo "x=$x, y=$y tras la llamada a funcion"
+echo $(( $x + $y ))

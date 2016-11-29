@@ -1,0 +1,19 @@
+#!/bin/bash
+mes=
+read -p "Introduce el numero o las 3 primeras letras del mes (minuscula): " mes
+case $mes in
+	ene|1) echo "Enero.";;
+	feb|2) echo "Febrero.";;
+	mar|3) echo "Marzo.";;
+	abr|4) echo "Abril.";;
+	may|5) echo "Mayo.";;
+	jun|6) echo "Junio.";;
+	jul|7) echo "Julio.";;
+	ago|8) echo "Agosto.";;
+	sep|9) echo "Septiembre.";;
+	oct|10) echo "Octubre.";;
+	nov|11) echo "Noviembre.";;
+	dic|12) echo "Diciembre.";;
+	*) echo "Error, no has introducido los datos correctamente.";;
+esac
+	

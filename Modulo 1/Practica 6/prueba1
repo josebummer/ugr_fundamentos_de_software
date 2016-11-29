@@ -1,0 +1,35 @@
+#!/bin/bash
+for i in `seq 0 1 10` ; do
+let j='i*2'
+echo $j
+done
+
+echo -e "\n\n"
+
+x=0
+while [ $x -le 5 ]; do
+	echo "x=$x"
+	x=$(( $x+1 ))
+done
+
+echo -e "\n\n"
+
+x=10
+until [ $x -eq 5 ]; do
+	echo "x=$x"
+	x=$(( $x-1 ))
+done
+
+echo -e "\n\n"
+
+x=0
+while true ; do
+	echo "x=$x"
+	x=$(( $x+1 ))
+	if [ $x -eq 77 ]; then
+		break # break termina el bucle y exit termina el programa y return para salir de una funcion.
+	fi
+done
+
+echo -e "\n\n"
+
